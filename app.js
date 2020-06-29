@@ -6,8 +6,16 @@ var logger = require('morgan');
 var expressHBS = require('express-handlebars')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var mongoose = require("mongoose")
 var app = express();
+
+mongoose.connect('mongodb://127.0.0.1/shoppingCart', { useNewUrlParser: true });
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+  console.log("Connected")
+});
+
 
 // view engine setup
 app.engine('.hbs', expressHBS({ defaultLayout: 'layout', extname: '.hbs' }))
