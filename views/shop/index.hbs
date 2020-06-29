@@ -1,24 +1,23 @@
 <h1>Welcome to {{title}}</h1>
 
-<div class="container">
-    {{# each productsChunks }}
 
-    <div class="row">
-        {{# each this}}
-        <div class="col-sm">
-            <div class="card">
-                <img class="card-img-top" src={{ this.imagePath }} alt="">
-                <div class="card-body">
-                    <h5 class="card-title">{{ this-imagePath }}</h5>
-                    <p class="card-text">RPG game</p>
-                    <div class="price">
-                        $60
-                    </div>
-                    <a href="#" class="btn btn-success">Go somewhere</a>
+{{# each productsChunks }}
+
+<div class="row">
+    {{# each this}}
+    <div class="col-sm">
+        <div class="card">
+            <img class="card-img-top" src={{ this.imagePath }} alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{ this-imagePath }}</h5>
+                <p class="card-text">RPG game</p>
+                <div class="price">
+                    $60
                 </div>
+                <a href="#" class="btn btn-success">Go somewhere</a>
             </div>
         </div>
-        {{/each}}
     </div>
     {{/each}}
 </div>
+{{/each}}

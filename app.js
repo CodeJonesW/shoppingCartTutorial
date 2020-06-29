@@ -7,13 +7,14 @@ var expressHBS = require('express-handlebars')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var mongoose = require("mongoose")
+var session = require('express-session')
 var app = express();
 
 mongoose.connect('mongodb://127.0.0.1/shoppingCart', { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
-  console.log("Connected")
+  console.log("Connected to DB")
 });
 
 
@@ -25,6 +26,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({ secret: 'willSecret', resave: false, saveUninitialized: false }))
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
