@@ -1,15 +1,15 @@
 <h1>Welcome to {{title}}</h1>
 
 <div class="container">
-    {{#each productsChunks }}
+    {{# each productsChunks }}
 
     <div class="row">
-        {{#each this}}
+        {{# each this}}
         <div class="col-sm">
             <div class="card">
-                <img class="card-img-top" src={{ this }} alt="Product Image">
+                <img class="card-img-top" src={{ this.imagePath }} alt="">
                 <div class="card-body">
-                    <h5 class="card-title">{{ this }}</h5>
+                    <h5 class="card-title">{{ this-imagePath }}</h5>
                     <p class="card-text">RPG game</p>
                     <div class="price">
                         $60
