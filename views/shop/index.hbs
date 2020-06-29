@@ -1,60 +1,15 @@
 <h1>Welcome to {{title}}</h1>
-{{# each products }}
-Product!
-{{/each}}
+
 <div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <div class="card">
-                <img class="card-img-top" src="https://i.ytimg.com/vi/DxAHM2mKjKI/maxresdefault.jpg"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Diablo</h5>
-                    <p class="card-text">RPG game</p>
-                    <div class="price">
-                        $60
-                    </div>
-                    <a href="#" class="btn btn-success">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card">
-                <img class="card-img-top" src="https://i.ytimg.com/vi/DxAHM2mKjKI/maxresdefault.jpg"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Diablo</h5>
-                    <p class="card-text">RPG game</p>
-                    <div class="price">
-                        $60
-                    </div>
-                    <a href="#" class="btn btn-success">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card">
-                <img class="card-img-top" src="https://i.ytimg.com/vi/DxAHM2mKjKI/maxresdefault.jpg"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Diablo</h5>
-                    <p class="card-text">RPG game</p>
-                    <div class="price">
-                        $60
-                    </div>
-                    <a href="#" class="btn btn-success">Go somewhere</a>
-                </div>
-            </div>
-        </div>
+    {{#each productsChunks }}
 
-    </div>
     <div class="row">
+        {{#each this}}
         <div class="col-sm">
             <div class="card">
-                <img class="card-img-top" src="https://i.ytimg.com/vi/DxAHM2mKjKI/maxresdefault.jpg"
-                    alt="Card image cap">
+                <img class="card-img-top" src={{ this }} alt="Product Image">
                 <div class="card-body">
-                    <h5 class="card-title">Diablo</h5>
+                    <h5 class="card-title">{{ this }}</h5>
                     <p class="card-text">RPG game</p>
                     <div class="price">
                         $60
@@ -63,34 +18,7 @@ Product!
                 </div>
             </div>
         </div>
-        <div class="col-sm">
-            <div class="card">
-                <img class="card-img-top" src="https://i.ytimg.com/vi/DxAHM2mKjKI/maxresdefault.jpg"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Diablo</h5>
-                    <p class="card-text">RPG game</p>
-                    <div class="price">
-                        $60
-                    </div>
-                    <a href="#" class="btn btn-success">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card">
-                <img class="card-img-top" src="https://i.ytimg.com/vi/DxAHM2mKjKI/maxresdefault.jpg"
-                    alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Diablo</h5>
-                    <p class="card-text">RPG game</p>
-                    <div class="price">
-                        $60
-                    </div>
-                    <a href="#" class="btn btn-success">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-
+        {{/each}}
     </div>
+    {{/each}}
 </div>
